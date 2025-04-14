@@ -1,0 +1,164 @@
+.tarjetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7rem;
+    padding: 4rem 2rem;
+
+  }
+  
+  /* Tarjeta visual optimizada */
+  .tarjeta-producto {
+    width: 260px;
+    background: linear-gradient(135deg, #1E2A38 0%, #17425adc 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid transparent;
+  
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.4),
+      0 0 16px rgba(0, 194, 255, 0.05);
+  
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
+    opacity: 0;
+    transform: translateY(20px);
+    animation: tarjetaIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes tarjetaIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Brillo activo */
+  .tarjeta-producto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(120deg, #00C2FF, #B86B3E);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  /* Indicador lateral */
+  .tarjeta-producto::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 100%;
+    background: linear-gradient(180deg, #00C2FF, #B86B3E);
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  /* Hover elegante */
+  .tarjeta-producto:hover {
+    transform: translateY(-12px) scale(1.025);
+    box-shadow:
+      0 12px 26px rgba(0, 0, 0, 0.5),
+      0 0 28px rgba(0, 194, 255, 0.25),
+      0 0 10px rgba(184, 107, 62, 0.15);
+  }
+  
+  .tarjeta-producto:hover::before {
+    opacity: 1;
+  }
+  
+  .tarjeta-producto:hover::after {
+    opacity: 1;
+  }
+  
+  /* Imagen destacada */
+  .imagen-producto {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-bottom: 3px solid #D98E5F;
+    box-shadow: inset 0 -14px 22px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Info */
+  .tarjeta-info {
+    position: relative;
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  
+  .tarjeta-info h3 {
+    color: #F5F7FA;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 3px rgba(0, 194, 255, 0.2);
+  }
+  
+  .tarjeta-info a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #EDF1F4;
+    transition: color 0.3s ease;
+  }
+  
+  .tarjeta-info a:hover {
+    color: #00C2FF;
+  }
+  
+  /* Mensaje emergente */
+  .tarjeta-info::after {
+    content: "Ver más detalles";
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    width: 100%;
+    font-size: 0.85rem;
+    color: #d88526;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .tarjeta-producto:hover .tarjeta-info::after {
+    bottom: 0.2rem;
+    opacity: 1;
+  }
+  .tarjeta-producto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(270deg, #00C2FF, #B86B3E, #00C2FF);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .tarjeta-producto:hover::before {
+    opacity: 1;
+    animation: recorrerBorde 4s linear infinite;
+  }
+  
+  @keyframes recorrerBorde {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  

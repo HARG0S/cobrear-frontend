@@ -1,0 +1,118 @@
+.informativo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 5rem;
+    justify-content: stretch;
+    align-items: start;
+    padding: 4rem 3rem;
+    position: relative;
+
+    z-index: 1;
+  }
+  
+  /* Línea superior naranja extendida */
+  .informativo-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    height: 3px;
+    background-color: #D98E5F;
+    z-index: -1;
+  }
+  
+  
+  
+  /* Tarjetas técnicas cuadradas */
+  .informativo-row {
+    min-height: 120px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.8rem 2rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: 0 0 14px rgba(70, 177, 201, 0.06);
+    backdrop-filter: blur(4px);
+    border-left: 4px solid #00C2FF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecerEscalonado 0.8s ease-out forwards;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Animación progresiva */
+  .informativo-row:nth-child(1) { animation-delay: 0.1s; }
+  .informativo-row:nth-child(2) { animation-delay: 0.3s; }
+  .informativo-row:nth-child(3) { animation-delay: 0.5s; }
+  .informativo-row:nth-child(4) { animation-delay: 0.7s; }
+  
+  .informativo-row:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 26px rgba(0, 194, 255, 0.15);
+  }
+  
+  /* Icono técnico */
+  .informativo-icon {
+    font-size: 2.2rem;
+    color: #00C2FF;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(0, 194, 255, 0.4));
+  }
+  
+  /* Contenido textual */
+  .informativo-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+  }
+  
+  .informativo-content h4 {
+    color: #F5F7FA;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 3px rgba(0, 194, 255, 0.3);
+  }
+  
+  .informativo-content p {
+    color: #D8DEE4;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Animación base */
+  @keyframes aparecerEscalonado {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive: columna en mobile */
+  @media (max-width: 768px) {
+    .informativo-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      justify-items: center;
+    }
+  
+    .informativo-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  
+    .informativo-icon {
+      font-size: 2rem;
+    }
+  
+    .informativo-content {
+      align-items: center;
+    }
+  }
+  

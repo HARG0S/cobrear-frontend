@@ -1,0 +1,42 @@
+.perfil-layout {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    color: #f0f8ff;
+  }
+  
+  .datos-perfil {
+    flex: 1;
+    background-color: #162c3a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 194, 255, 0.08);
+  }
+  
+  .historial-pedidos {
+    flex: 2;
+    background-color: #0f1f2e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 194, 255, 0.08);
+  }
+  
+  .pedido-card {
+    background-color: #1d2e3e;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #00c2ff;
+  }
+  
+  .boton-comprobante {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background-color: #00c2ff;
+    color: #002633;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  

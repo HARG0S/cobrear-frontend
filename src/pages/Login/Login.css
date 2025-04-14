@@ -1,0 +1,87 @@
+.secure-login-wrapper {
+    background: radial-gradient(circle at 20% 30%, #11202d, #08151f);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .secure-login-box {
+    backdrop-filter: blur(16px);
+    background: rgba(22, 35, 46, 0.75);
+    padding: 2.8rem 2rem;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 0 20px rgba(70, 177, 201, 0.1);
+    border: 1px solid rgba(70, 177, 201, 0.15);
+    position: relative;
+  }
+  
+  .secure-login-box h2 {
+    color: #b2eaff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 0 0 6px rgba(70, 177, 201, 0.3);
+  }
+  
+  .secure-login-box label {
+    display: block;
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: #d6eaf5;
+    font-size: 0.92rem;
+  }
+  
+  .secure-login-box input {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #2b9ab0;
+    background-color: rgba(16, 35, 45, 0.6);
+    color: #f0faff;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.2s ease;
+  }
+  
+  .secure-login-box input:focus {
+    outline: none;
+    border-color: #6fd0ff;
+    box-shadow: 0 0 8px rgba(70, 177, 201, 0.5);
+  }
+  
+  .secure-login-box button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(145deg, #0ac182, #0dc47d);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(13, 196, 125, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .secure-login-box button:hover {
+    background: linear-gradient(145deg, #0aad6d, #0ac182);
+    transform: scale(1.01);
+  }
+  
+  .secure-login-error {
+    margin-top: 1.4rem;
+    background-color: #3c1c1c;
+    padding: 0.6rem 1rem;
+    color: #f8a8a8;
+    border-left: 4px solid #ff5c5c;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    box-shadow: inset 0 0 4px rgba(255, 0, 0, 0.2);
+  }
+  
